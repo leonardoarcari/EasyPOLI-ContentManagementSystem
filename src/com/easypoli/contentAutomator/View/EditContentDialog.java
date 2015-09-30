@@ -81,6 +81,7 @@ public class EditContentDialog extends JDialog implements ActionListener {
         /* #######################################
          * CREATING OBJECTS AND SETTING UP JLIST
          * ####################################### */
+
         super(parent, "Edit Content", true); // Call super constructor
         this.toEdit = content; // Save Content reference
         fileDialog = new FileDialog(this, "Choose a PDF File"); // Instantiate a new FileDialog

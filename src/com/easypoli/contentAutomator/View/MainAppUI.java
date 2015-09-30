@@ -7,7 +7,7 @@ import java.awt.*;
 
 /**
  * This class is intended to be the UI Head-Quarter. Every UI responsible class has its reference in this class. This
- * way we can always reach another point of the UI easily through getters and setters. This at this as Rome for Italy
+ * way we can always reach another point of the UI easily through getters and setters. Think at this as Rome for Italy
  * as we Italians say "Every road gets you to Rome".
  */
 public class MainAppUI {
