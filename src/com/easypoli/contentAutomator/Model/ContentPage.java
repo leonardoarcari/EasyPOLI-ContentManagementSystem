@@ -185,10 +185,10 @@ public class ContentPage implements Comparable<ContentPage>{
                                     }
                                 // Content single resource NoteFile
                                 } else if (currentLine.contains("<a target=\"_blank\" class=\"btn")) {
-                                    currentLine = currentLine  // Remove unnecessary html code
-                                                    .substring(currentLine.indexOf("href="))
-                                                    .replace("href=\"", "")
-                                                    .substring(0, currentLine.indexOf("\">Scarica"));
+                                    // Remove unnecessary html code
+                                    currentLine = currentLine.substring(currentLine.indexOf("href="));
+                                    currentLine = currentLine.replace("href=\"", "");
+                                    currentLine = currentLine.substring(0, currentLine.indexOf("\">Scarica"));
                                     // Add NoteFile to Content
                                     tmp.getNoteFiles().add(new NoteFile(currentLine, NoteFile.NoteFileLocation.SERVER));
                                 // Content multiple resource file
@@ -196,16 +196,15 @@ public class ContentPage implements Comparable<ContentPage>{
                                     // Check if we're still reading through resources links
                                     while ((currentLine = bufferedReader.readLine()).contains
                                             ("AnalyticsEserciziBlocco")) {
-                                        currentLine = currentLine // Remove unnecessary html code
-                                                .trim()
-                                                .toLowerCase()
-                                                .substring(
-                                                        currentLine.indexOf("href="),
-                                                        currentLine.indexOf("\">pdf"))
-                                                .replace("href=\"", "");
-                                        tmp.getNoteFiles().add(new NoteFile( // Add NoteFiles to Content
-                                                currentLine,
-                                                NoteFile.NoteFileLocation.SERVER));
+                                        // Remove unnecessary html code
+                                            currentLine = currentLine.trim().toLowerCase();
+                                            currentLine = currentLine.substring(
+                                                            currentLine.indexOf("href="),
+                                                            currentLine.indexOf("\">pdf"));
+                                            currentLine = currentLine.replace("href=\"", "");
+                                            tmp.getNoteFiles().add(new NoteFile( // Add NoteFiles to Content
+                                                    currentLine,
+                                                    NoteFile.NoteFileLocation.SERVER));
                                     }
                                 }
                             } System.out.println(tmp); // Debugging
