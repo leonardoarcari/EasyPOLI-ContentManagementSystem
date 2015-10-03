@@ -67,6 +67,10 @@ public class EditContentPageUI implements ActionListener {
      */
     private JTextField shortTitleField;
     /**
+     * Page file name text field
+     */
+    private JTextField fileNameField;
+    /**
      * Pages vector containing pages can be picked from ComboBox
      */
     private Vector<ContentPage> pages;
@@ -133,12 +137,14 @@ public class EditContentPageUI implements ActionListener {
         JLabel largeTitleLabel = new JLabel("Large Title");
         JLabel mediumTitleLabel = new JLabel("Medium Title");
         JLabel shortTitleLabel = new JLabel("Short Title");
+        JLabel fileNameLabel = new JLabel("File name");
 
         pageTitleField = new JTextField(10);
         descriptionField = new JTextField(10);
         largeTitleField = new JTextField(10);
         mediumTitleField = new JTextField(10);
         shortTitleField = new JTextField(10);
+        fileNameField = new JTextField(10);
 
         // Page title Label constraints
         cs.gridx = 0;
@@ -164,12 +170,12 @@ public class EditContentPageUI implements ActionListener {
         cs.gridy = 0;
         cs.fill = GridBagConstraints.HORIZONTAL;
         cs.weightx = 1;
-        cs.gridwidth = 3;
         cs.insets = new Insets(0, 0, 0, 0);
         pagePropertiesPanel.add(pageTitleField, cs);
 
         // Page description text field constraints
         cs.gridy = 1;
+        cs.gridwidth = 3;
         pagePropertiesPanel.add(descriptionField, cs);
 
         // Page large title text field constraints
@@ -195,6 +201,21 @@ public class EditContentPageUI implements ActionListener {
         cs.gridx = 3;
         cs.insets = new Insets(0, 0, 0, 0);
         pagePropertiesPanel.add(shortTitleField, cs);
+
+        // File name title Label constraints
+        cs.weightx = 0;
+        cs.gridx = 2;
+        cs.gridy = 0;
+        cs.fill = GridBagConstraints.RELATIVE;
+        cs.insets = new Insets(0, 5, 0, 5);
+        pagePropertiesPanel.add(fileNameLabel, cs);
+
+        // File name title text field constraints
+        cs.weightx = 1;
+        cs.gridx = 3;
+        cs.fill = GridBagConstraints.HORIZONTAL;
+        cs.insets = new Insets(0, 0, 0, 0);
+        pagePropertiesPanel.add(fileNameField, cs);
 
         pagePropertiesPanel.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10))); // Set insets
 
