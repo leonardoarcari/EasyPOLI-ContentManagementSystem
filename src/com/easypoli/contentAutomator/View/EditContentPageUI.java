@@ -267,6 +267,7 @@ public class EditContentPageUI implements ActionListener {
             largeTitleField.setText(selected.getTitleLarge());
             mediumTitleField.setText(selected.getTitleMedium());
             shortTitleField.setText(selected.getTitleSmall());
+            fileNameField.setText(selected.getFileName());
 
             // We wanna check if this is the first time we're picking a Content Page from the combobox. If so instead
             // of a list of contents we have a tempPanel. If not we still want to replace the old list with a new one.
